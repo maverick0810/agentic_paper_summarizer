@@ -29,11 +29,6 @@ This project leverages [CrewAI](https://github.com/joaomdmoura/crewai) to orches
 
 All steps are performed sequentially and visualized in a clean Streamlit interface.
 
----
-
-## 🖥️ Demo
-
-![screenshot or gif here if available]
 
 ---
 
