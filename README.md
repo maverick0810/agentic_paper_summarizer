@@ -1,56 +1,106 @@
-# {{crew_name}} Crew
+Absolutely! Here’s a professional, informative `README.md` for your project, tailored to your workflow and Streamlit UI:
 
-Welcome to the {{crew_name}} Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+---
 
-## Installation
+# Agentic Paper Summarizer
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+A modern, agentic AI-powered tool to **search, download, extract, and summarize research papers from arXiv**—all in a single, interactive Streamlit web app.
 
-First, if you haven't already, install uv:
+---
 
+## 🚀 Features
+
+- **Search arXiv** for the most relevant research papers using your query
+- **Download PDFs** automatically
+- **Extract text** from downloaded papers
+- **Summarize** the extracted content using prompt-engineered AI agents
+- **User-friendly Streamlit UI** for seamless interaction
+- **Planned:** Memory and RAG integration for even smarter research
+
+---
+
+## 🧠 How It Works
+
+This project leverages [CrewAI](https://github.com/joaomdmoura/crewai) to orchestrate a team of AI agents, each with a specialized role:
+
+1. **Fetch Agent:** Finds and downloads the most relevant papers from arXiv.
+2. **Extract Agent:** Extracts text from the downloaded PDFs.
+3. **Summarize Agent:** Summarizes the extracted content for quick insights.
+
+All steps are performed sequentially and visualized in a clean Streamlit interface.
+
+---
+
+## 🖥️ Demo
+
+![screenshot or gif here if available]
+
+---
+
+## 🛠️ Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/maverick0810/agentic_paper_summarizer.git
+   cd agentic_paper_summarizer
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+   Or, if using Poetry:
+   ```bash
+   poetry install
+   ```
+
+3. **Set up your environment:**
+   - Add your `OPENAI_API_KEY` to a `.env` file in the root directory.
+
+---
+
+## ▶️ Usage
+
+**To launch the Streamlit app:**
 ```bash
-pip install uv
+streamlit run app.py
 ```
 
-Next, navigate to your project directory and install the dependencies:
+- Enter your research query and number of papers to fetch.
+- Click "Search, Extract & Summarize" and let the agents do the work!
+- Download the summary or review extracted text right in the browser.
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
+---
+
+## 📁 Project Structure
+
+```
+arxiv_paper_streamlit/
+├── app.py                  # Streamlit UI
+├── src/arxiv_paper/        # Core logic, agents, tools
+├── arxiv_papers/           # Downloaded PDFs
+├── README.md
+├── pyproject.toml
+└── ...
 ```
 
-### Customizing
+---
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+## 🤖 Tech Stack
 
-- Modify `src/arxiv_paper/config/agents.yaml` to define your agents
-- Modify `src/arxiv_paper/config/tasks.yaml` to define your tasks
-- Modify `src/arxiv_paper/crew.py` to add your own logic, tools and specific args
-- Modify `src/arxiv_paper/main.py` to add custom inputs for your agents and tasks
+- Python
+- Streamlit
+- CrewAI
+- arXiv API
+- PyMuPDF (fitz) for PDF extraction
 
-## Running the Project
+---
 
-To kickstart your flow and begin execution, run this from the root folder of your project:
+## 📝 Future Plans
 
-```bash
-crewai run
-```
+- Integrate memory for context-aware summarization
+- Add RAG (Retrieval-Augmented Generation) capabilities
+- More advanced UI features
 
-This command initializes the arxiv_paper Flow as defined in your configuration.
+---
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
-
-## Understanding Your Crew
-
-The arxiv_paper Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
-
-## Support
-
-For support, questions, or feedback regarding the {{crew_name}} Crew or crewAI.
-
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
