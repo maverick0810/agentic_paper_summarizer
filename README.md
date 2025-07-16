@@ -1,6 +1,3 @@
-Absolutely! Here’s a professional, informative `README.md` for your project, tailored to your workflow and Streamlit UI:
-
----
 
 # Agentic Paper Summarizer
 
