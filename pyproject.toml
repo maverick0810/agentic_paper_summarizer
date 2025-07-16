@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "arxiv_paper_streamlit"
+version = "0.1.0"
+description = "A Streamlit-enabled version of arxiv_paper."
+authors = ["Your Name <your.email@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+streamlit = "^1.35.0"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]>=0.134.0,<1.0.0",
+]
+
+[project.scripts]
+kickoff = "arxiv_paper.main:kickoff"
+run_crew = "arxiv_paper.main:kickoff"
+plot = "arxiv_paper.main:plot"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "flow"

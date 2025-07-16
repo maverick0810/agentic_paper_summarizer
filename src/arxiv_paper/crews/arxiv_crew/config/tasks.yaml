@@ -1,0 +1,26 @@
+fetch_paper_task:
+  description: >
+    Given a specific research query {query},
+    search arXiv for the most relevant papers, 
+    download the PDF files, 
+    and return the file paths to the downloaded papers.
+    Ensure that the papers are fetched accurately and are available for further processing or summarization.
+  expected_output: >
+    A list of local file path to the downloaded PDF files corresponding to the most relevant papers found on arXiv for the given query.
+  agent: fetch_paper_agent
+
+extract_text_task:
+  description: >
+    Given a list of file path {file_paths},
+    Extract the text from the research paper append it into a string for further processing
+  expected_output: >
+    A string of text that contains content of the paper downloaded
+  agent: extract_text_agent
+
+summarize_task:
+  description: >
+    Given the following academic text: {text}, summarize the research paper in clear and concise language, making sure to highlight all main points and explicitly provide important context. 
+    The summary should be understandable even to someone who has not read the full paper.
+  expected_output: >
+    A well-structured summary that covers the paper's background, main contributions, key findings, and conclusions, in 1-2 paragraphs.
+  agent: summarize_agent
